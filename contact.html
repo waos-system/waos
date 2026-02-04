@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>お問い合わせ | 株式会社WAO'S</title>
+<meta name="description" content="株式会社WAO'Sへのお問い合わせフォーム">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9eff5 100%);
+  }
+  .contact-hero {
+    padding: 80px 0 40px;
+    text-align: center;
+  }
+  .contact-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+  .contact-card .form-control {
+    border-radius: 8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="py-3">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="index.html" class="text-decoration-none d-flex align-items-center">
+      <img src="img/waoslogo.png" alt="株式会社WAO'S" style="height:40px;">
+    </a>
+    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="window.close();">閉じる</button>
+  </div>
+</header>
+
+<main>
+  <section class="contact-hero">
+    <div class="container">
+      <h1 class="mb-3">お問い合わせ</h1>
+      <p class="text-muted">ご相談・ご質問は下記フォームよりお気軽にご連絡ください。</p>
+    </div>
+  </section>
+
+  <section class="pb-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="contact-card p-4 p-md-5">
+            <form action="https://script.google.com/macros/s/AKfycbzHNIE9L3xiQ79L7bi_RvhwgT6QMn_0MYGg22yuec-GRJnJgaAUukLugj0cZ_bD_pDD/exec" method="POST">
+              <div class="form-group">
+                <label>お名前</label>
+                <input type="text" name="name" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label>お問い合わせ種別</label>
+                <select name="category" class="form-control" required>
+                  <option value="" disabled selected>選択してください</option>
+                  <option value="サービス相談">サービス相談</option>
+                  <option value="採用応募">採用応募</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>メールアドレス</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label>希望職種（採用応募の方）</label>
+                <input type="text" name="position" class="form-control" placeholder="例：バックエンドエンジニア">
+              </div>
+
+              <div class="form-group">
+                <label>お問い合わせ内容</label>
+                <textarea name="message" rows="6" class="form-control" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">送信する</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="py-4">
+  <div class="container text-center text-muted">
+    <small>&copy; WAO'S All Rights Reserved.</small>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

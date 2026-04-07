@@ -25,17 +25,37 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
+:root {
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-500: #64748b;
+  --slate-700: #334155;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+}
 /* 固定ヘッダー */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  min-height: 56px;
+  border-bottom: 1px solid var(--slate-200);
+  background: rgba(248, 250, 252, 0.9) !important;
+  backdrop-filter: blur(12px);
 }
 
 /* ヘッダー分の余白 */
 body {
   padding-top: 70px;
+  background: var(--slate-50);
+  color: var(--slate-700);
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 /* スムーススクロール */
@@ -47,16 +67,127 @@ html {
 section {
   scroll-margin-top: 80px;
 }
+h2,
+h3 {
+  color: var(--slate-900);
+}
+a {
+  color: var(--blue-600);
+}
+a:hover,
+a:focus {
+  color: var(--blue-700);
+}
+.navbar .navbar-brand {
+  color: var(--slate-900);
+}
+.navbar .navbar-nav .nav-link {
+  color: var(--slate-700) !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--blue-600) !important;
+}
+.navbar-toggler {
+  border-color: var(--slate-200);
+}
+.navbar-toggler-icon {
+  filter: invert(14%) sepia(19%) saturate(937%) hue-rotate(176deg) brightness(95%) contrast(93%);
+}
 
 /* 読みやすさ調整 */
 .section-text {
+  color: var(--slate-700);
   line-height: 1.8;
 }
 .section-text p {
   margin-bottom: 1rem;
 }
 .section-narrow {
-  max-width: 820px;
+  max-width: 896px;
+}
+.section-card {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: #ffffff;
+}
+.section-card + .section-card {
+  margin-top: 1.5rem;
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--blue-100);
+  border-radius: 6px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.external-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  max-width: 896px;
+  margin: 0 auto;
+}
+.external-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: #ffffff;
+}
+.external-card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.external-card-copy {
+  margin-bottom: 1rem;
+  color: var(--slate-500);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.external-card-meta {
+  margin-bottom: 1.25rem;
+  color: var(--slate-500);
+  font-size: 0.85rem;
+}
+.external-card .cta-group {
+  margin-top: auto;
+}
+.company-card {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: #ffffff;
+}
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 720px;
+  margin: 1rem auto 0;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.88);
+}
+.footer-links a:hover,
+.footer-links a:focus {
+  color: #ffffff;
 }
 /* 会社概要の折り返し防止 */
 .company-table td {
@@ -80,6 +211,13 @@ section {
 }
 .service-block {
   margin-bottom: 2rem;
+  max-width: 896px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: #ffffff;
 }
 .service-block:last-child {
   margin-bottom: 0;
@@ -106,113 +244,98 @@ section {
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .btn-primary {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: var(--blue-600);
+  border-color: var(--blue-600);
+  color: #ffffff;
 }
 .btn-primary:hover,
-.btn-primary:focus {
-  background-color: #1d4ed8;
-  border-color: #1d4ed8;
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: var(--blue-700);
+  border-color: var(--blue-700);
+  color: #ffffff;
 }
 .btn-outline-primary {
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: var(--blue-600);
+  color: #ffffff;
+  background: var(--blue-600);
 }
 .btn-outline-primary:hover,
-.btn-outline-primary:focus {
-  background-color: #eff6ff;
-  border-color: #1d4ed8;
-  color: #1d4ed8;
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary:visited {
+  background-color: var(--blue-700);
+  border-color: var(--blue-700);
+  color: #ffffff;
 }
 .btn-outline-light {
-  border-width: 2px;
+  border-width: 1px;
+  border-color: var(--blue-600);
+  background: var(--blue-600);
+  color: #ffffff;
 }
-.blog-feature-card {
+.btn-outline-light:hover,
+.btn-outline-light:focus,
+.btn-outline-light:active,
+.btn-outline-light:visited {
+  border-color: var(--blue-700);
+  background: var(--blue-700);
+  color: #ffffff;
+}
+#page-top .jumbotron-fluid {
+  min-height: 520px;
+  background:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.74) 0%, rgba(15, 23, 42, 0.52) 46%, rgba(15, 23, 42, 0.12) 100%),
+    url("img/top-main.jpg") no-repeat center center;
+  background-size: cover;
+}
+#page-top .jumbotron-fluid .container {
   max-width: 896px;
-  margin: 0 auto;
-  background: #ffffff;
-  border: 2px solid #2563eb;
-  border-radius: 16px;
-  overflow: hidden;
-  color: #334155;
+  height: 100%;
 }
-.blog-feature-bar {
-  height: 8px;
-  background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+#page-top .jumbotron-fluid p {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.92);
 }
-.blog-feature-body {
-  padding: 2rem;
-}
-.blog-badge-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-.blog-tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.2rem 0.65rem;
-  border-radius: 6px;
-  border: 1px solid #dbeafe;
-  background: #eff6ff;
-  color: #1d4ed8;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-.blog-feature-title {
+.hero-copy {
   margin-bottom: 0.75rem;
-  color: #0f172a;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.35;
-}
-.blog-feature-copy {
-  margin-bottom: 1.5rem;
-  color: #475569;
-}
-.blog-feature-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-.blog-meta-list {
-  display: grid;
-  gap: 0.75rem;
-  margin: 1.25rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-.blog-meta-list li {
-  padding: 0.9rem 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  background: #f8fafc;
-}
-.blog-meta-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  color: #64748b;
-  font-size: 0.75rem;
+  font-size: 1.35rem;
   font-weight: 500;
+  line-height: 1.55;
 }
-.blog-meta-value {
-  color: #0f172a;
-  font-size: 0.95rem;
-  font-weight: 600;
-  word-break: break-all;
+#page-top section {
+  padding: 3.5rem 0;
+  border-bottom: 1px solid var(--slate-200);
+  background: transparent;
 }
-.blog-inline-link {
-  color: #2563eb;
+#page-top section .container {
+  max-width: 1100px;
 }
-.blog-inline-link:hover,
-.blog-inline-link:focus {
-  color: #1d4ed8;
+#page-top section .container > h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+#footer {
+  background: var(--slate-950);
+}
+#footer .container {
+  color: rgba(255, 255, 255, 0.86);
 }
 @media (max-width: 768px) {
-  .blog-feature-body {
+  .external-card-grid,
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+  .section-card,
+  .service-block,
+  .company-card,
+  .external-card {
     padding: 1.5rem;
+  }
+  .hero-copy {
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 576px) {
@@ -225,6 +348,10 @@ section {
   }
   .cta-group--hero {
     justify-content: center;
+  }
+  .company-table td,
+  .company-table th {
+    white-space: normal;
   }
 }
 </style>
@@ -280,9 +407,9 @@ section {
 <section class="jumbotron-fluid mb-0">
   <div class="container d-flex align-items-center">
     <div>
-      <h1>株式会社WAO'S</h1>
-      <p class="lead">ITを、長く使える資産に。</p>
-      <p>企画から開発・運用まで一貫対応。SI/SESで柔軟に支援します。</p>
+      <h1>株式会社 WAO'S</h1>
+      <p class="hero-copy">ITを、長く使える資産に。</p>
+      <p class="hero-copy">企画から開発・運用まで一貫対応。SI/SESで柔軟に支援します。</p>
       <div class="mt-3 cta-group cta-group--hero">
         <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">お問い合わせ</a>
         <a class="btn btn-outline-light" href="#sec2">サービスを見る</a>
@@ -294,8 +421,10 @@ section {
 <section id="sec1">
   <div class="container">
     <h2 class="text-center">事業概要</h2>
-    <div class="section-text section-narrow mx-auto text-center">
-      <p>株式会社WAO'S（ワオス）はエンジニアの技術力を基盤に、SES・SI事業を通じてシステムの設計から開発までを担うITエンジニアリング企業です。</p>
+    <div class="section-card section-text section-narrow mx-auto text-center">
+      <div class="section-label">Overview</div>
+      <p>株式会社WAO'S（ワオス）はエンジニアの技術力を基盤に、</p>
+      <p>SES・SI事業を通じてシステムの設計から開発までを担うITエンジニアリング企業です。</p>
       <p>SES・SIを中心に、業務システム、ECサイト、金融系システムの企画・開発・運用まで一貫して対応します。</p>
       <p>ビジネスアプリケーションのシステム構築にも対応し、現場で使いやすい業務支援ツールの開発を行います。</p>
       <p>事業内容の例：業務効率化システム、販売・在庫管理、顧客管理（CRM）、予約・受付管理、</p>
@@ -334,7 +463,8 @@ section {
 <section id="sec3">
   <div class="container">
     <h2 class="text-center">強み</h2>
-    <div class="section-text section-narrow mx-auto text-center">
+    <div class="section-card section-text section-narrow mx-auto text-center">
+      <div class="section-label">Strengths</div>
       <p>業務理解力、品質重視の設計、運用まで見据えた体制で、継続的に成果を出せるシステムを提供します。</p>
       <p>生成AIの活用により、開発スピードと品質の両立を図ります。</p>
       <p>小規模な改修から中長期の開発支援まで、規模やフェーズに応じて柔軟に対応します。</p>
@@ -344,52 +474,48 @@ section {
 
 <section id="sec3-training">
   <div class="container">
-    <h2 class="text-center">エンジニア育成</h2>
-    <div class="section-text section-narrow mx-auto text-center">
-      <p>株式会社WAO'Sは、技術提供だけでなくエンジニアの継続的な育成にも力を入れています。</p>
-      <p>実務で必要となる基礎力と応用力を高めるため、社内外で活用できる学習コンテンツを整備し、日々の成長を支援しています。</p>
-      <p>その取り組みの一つとして、学習用の問題サイトを公開しています。</p>
-    </div>
-    <div class="text-center cta-group">
-      <a class="btn btn-outline-primary" href="https://waos-system.github.io/exam-questions/" target="_blank" rel="noopener">学習サイトを見る</a>
-    </div>
-  </div>
-</section>
-
-<section id="sec3-community">
-  <div class="container">
-    <h2 class="text-center">掲示板サイト</h2>
-    <div class="section-text section-narrow mx-auto text-center">
-      <p>WAO'Sでは、投票機能付き掲示板サイトを開発・公開しています。</p>
-      <p>投稿、投票、リアクションを通じてユーザー同士が意見交換できるWeb掲示板サービスで、コミュニティサイトや参加型サービスの開発イメージをご確認いただけます。</p>
-      <p>掲示板システム開発、Webサービス開発、UI設計を含む実績の一例として、実際の動作を体験できます。</p>
-    </div>
-    <div class="text-center cta-group">
-      <a class="btn btn-outline-primary" href="https://vote-bbs.vercel.app/" target="_blank" rel="noopener">投票機能付き掲示板サイトを見る</a>
-    </div>
-  </div>
-</section>
-
-<section id="sec3-blog">
-  <div class="container">
-    <h2 class="text-center">社内技術ブログ</h2>
+    <h2 class="text-center">公開コンテンツ</h2>
     <div class="section-text text-center mb-4 section-narrow mx-auto">
-      <p>WAO'Sの社内技術ブログを公開しています。</p>
-      <p>技術検証、開発ノウハウ、学習内容を継続的に発信し、開発現場で蓄積した知見をご覧いただけます。</p>
-      <p>ブログは生成AIで社内向けに作成したオリジナルのものです。</p>
+      <p>技術提供だけでなく、学習支援や情報発信に活用できる公開コンテンツも整備しています。</p>
     </div>
-        <div class="blog-feature-actions cta-group">
+    <div class="external-card-grid">
+      <article class="external-card section-text">
+        <div class="section-label">Learning</div>
+        <h3 class="external-card-title">学習サイト</h3>
+        <p class="external-card-copy">基礎力と応用力を高めるための学習用問題サイトです。継続的なトレーニングや社内外の学習支援に活用できます。</p>
+        <p class="external-card-meta">業務理解 / 基礎学習 / 継続トレーニング</p>
+        <div class="cta-group">
+          <a class="btn btn-outline-primary" href="https://waos-system.github.io/exam-questions/" target="_blank" rel="noopener">学習サイトを見る</a>
+        </div>
+      </article>
+      <article class="external-card section-text">
+        <div class="section-label">Community</div>
+        <h3 class="external-card-title">掲示板サイト</h3>
+        <p class="external-card-copy">投稿、投票、リアクションを通じて意見交換できるWeb掲示板サービスです。参加型サービスの開発イメージを確認できます。</p>
+        <p class="external-card-meta">投稿機能 / 投票機能 / UI設計</p>
+        <div class="cta-group">
+          <a class="btn btn-outline-primary" href="https://vote-bbs.vercel.app/" target="_blank" rel="noopener">掲示板サイトを見る</a>
+        </div>
+      </article>
+      <article class="external-card section-text">
+        <div class="section-label">Tech Blog</div>
+        <h3 class="external-card-title">社内技術ブログ</h3>
+        <p class="external-card-copy">技術検証、開発ノウハウ、学習内容を継続的に発信するブログです。生成AIを活用して社内向けに構築したオリジナルのブログ基盤を公開しています。</p>
+        <p class="external-card-meta">技術検証 / 開発ノウハウ / 情報発信</p>
+        <div class="cta-group">
           <a class="btn btn-primary" href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">ブログを見る</a>
         </div>
-
+      </article>
+    </div>
   </div>
 </section>
 
 <section id="sec4">
   <div class="container">
     <h2 class="text-center">会社概要</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div class="company-card">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
         <table class="table table-borderless company-table">
           <tbody>
             <tr>
@@ -406,10 +532,11 @@ section {
             </tr>
           </tbody>
         </table>
+        </div>
       </div>
-    </div>
-    <div class="text-center cta-group">
-      <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">お問い合わせはこちら</a>
+      <div class="mt-4 text-center cta-group">
+        <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">お問い合わせはこちら</a>
+      </div>
     </div>
   </div>
 </section>
@@ -417,13 +544,14 @@ section {
 <section id="sec5">
   <div class="container">
     <h2 class="text-center">採用情報</h2>
-    <div class="section-text section-narrow mx-auto text-center">
+    <div class="section-card section-text section-narrow mx-auto text-center">
+      <div class="section-label">Recruit</div>
       <p>株式会社WAO'Sでは、システム開発・インフラ・プロジェクト推進など幅広い職種で仲間を募集しています。</p>
       <p>経験や志向に合わせて、裁量を持って成長できる環境をご用意しています。</p>
       <p>採用応募・カジュアル面談はお問い合わせフォームより受け付けています。</p>
-    </div>
-    <div class="text-center cta-group">
-      <a class="btn btn-outline-primary" href="contact.html" target="_blank" rel="noopener">採用について問い合わせる</a>
+      <div class="text-center cta-group mt-4">
+        <a class="btn btn-outline-primary" href="contact.html" target="_blank" rel="noopener">採用について問い合わせる</a>
+      </div>
     </div>
   </div>
 </section>
@@ -434,15 +562,11 @@ section {
   <div class="container py-5 text-center">
     <p><strong>株式会社WAO'S</strong></p>
     <p>〒161-0031 東京都新宿区西落合1-16-4</p>
-    <div class="mt-2">
+    <div class="footer-links">
       <a href="https://waos-system.github.io/exam-questions/" target="_blank" rel="noopener">学習サイト</a>
-      <span class="mx-2">|</span>
       <a href="https://vote-bbs.vercel.app/" target="_blank" rel="noopener">掲示板サイト</a>
-      <span class="mx-2">|</span>
       <a href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">社内技術ブログ</a>
-      <span class="mx-2">|</span>
       <a href="contact.html" target="_blank" rel="noopener">お問い合わせ</a>
-      <span class="mx-2">|</span>
       <a href="policy.html">プライバシーポリシー</a>
     </div>
     <p class="mt-3">&copy; WAO'S All Rights Reserved.</p>

@@ -84,6 +84,49 @@ section {
 .service-block:last-child {
   margin-bottom: 0;
 }
+.cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.cta-group--hero {
+  justify-content: flex-start;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 0.85rem 1.75rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.btn-primary {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+.btn-outline-primary {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #eff6ff;
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+.btn-outline-light {
+  border-width: 2px;
+}
 .blog-feature-card {
   max-width: 896px;
   margin: 0 auto;
@@ -134,40 +177,6 @@ section {
   gap: 0.75rem;
   justify-content: center;
 }
-.blog-primary-link {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  background: #2563eb;
-  color: #ffffff;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.2s ease;
-}
-.blog-primary-link:hover,
-.blog-primary-link:focus {
-  background: #1d4ed8;
-  color: #ffffff;
-  text-decoration: none;
-}
-.blog-secondary-link {
-  display: inline-block;
-  padding: 0.8rem 1.6rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: #ffffff;
-  color: #475569;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.blog-secondary-link:hover,
-.blog-secondary-link:focus {
-  border-color: #93c5fd;
-  background: #f8fafc;
-  color: #334155;
-  text-decoration: none;
-}
 .blog-meta-list {
   display: grid;
   gap: 0.75rem;
@@ -209,6 +218,13 @@ section {
 @media (max-width: 576px) {
   .service-image {
     height: 180px;
+  }
+  .btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .cta-group--hero {
+    justify-content: center;
   }
 }
 </style>
@@ -267,8 +283,8 @@ section {
       <h1>株式会社WAO'S</h1>
       <p class="lead">ITを、長く使える資産に。</p>
       <p>企画から開発・運用まで一貫対応。SI/SESで柔軟に支援します。</p>
-      <div class="mt-3">
-        <a class="btn btn-primary mr-2" href="contact.html" target="_blank" rel="noopener">お問い合わせ</a>
+      <div class="mt-3 cta-group cta-group--hero">
+        <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">お問い合わせ</a>
         <a class="btn btn-outline-light" href="#sec2">サービスを見る</a>
       </div>
     </div>
@@ -334,7 +350,7 @@ section {
       <p>実務で必要となる基礎力と応用力を高めるため、社内外で活用できる学習コンテンツを整備し、日々の成長を支援しています。</p>
       <p>その取り組みの一つとして、学習用の問題サイトを公開しています。</p>
     </div>
-    <div class="text-center">
+    <div class="text-center cta-group">
       <a class="btn btn-outline-primary" href="https://waos-system.github.io/exam-questions/" target="_blank" rel="noopener">学習サイトを見る</a>
     </div>
   </div>
@@ -348,7 +364,7 @@ section {
       <p>投稿、投票、リアクションを通じてユーザー同士が意見交換できるWeb掲示板サービスで、コミュニティサイトや参加型サービスの開発イメージをご確認いただけます。</p>
       <p>掲示板システム開発、Webサービス開発、UI設計を含む実績の一例として、実際の動作を体験できます。</p>
     </div>
-    <div class="text-center">
+    <div class="text-center cta-group">
       <a class="btn btn-outline-primary" href="https://vote-bbs.vercel.app/" target="_blank" rel="noopener">投票機能付き掲示板サイトを見る</a>
     </div>
   </div>
@@ -362,8 +378,8 @@ section {
       <p>技術検証、開発ノウハウ、学習内容を継続的に発信し、開発現場で蓄積した知見をご覧いただけます。</p>
       <p>ブログは生成AIで社内向けに作成したオリジナルのものです。</p>
     </div>
-        <div class="blog-feature-actions">
-          <a class="blog-primary-link" href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">ブログを見る</a>
+        <div class="blog-feature-actions cta-group">
+          <a class="btn btn-primary" href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">ブログを見る</a>
         </div>
 
   </div>
@@ -392,7 +408,7 @@ section {
         </table>
       </div>
     </div>
-    <div class="text-center">
+    <div class="text-center cta-group">
       <a class="btn btn-primary" href="contact.html" target="_blank" rel="noopener">お問い合わせはこちら</a>
     </div>
   </div>
@@ -406,7 +422,7 @@ section {
       <p>経験や志向に合わせて、裁量を持って成長できる環境をご用意しています。</p>
       <p>採用応募・カジュアル面談はお問い合わせフォームより受け付けています。</p>
     </div>
-    <div class="text-center">
+    <div class="text-center cta-group">
       <a class="btn btn-outline-primary" href="contact.html" target="_blank" rel="noopener">採用について問い合わせる</a>
     </div>
   </div>

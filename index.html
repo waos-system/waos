@@ -84,6 +84,128 @@ section {
 .service-block:last-child {
   margin-bottom: 0;
 }
+.blog-feature-card {
+  max-width: 896px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 2px solid #2563eb;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #334155;
+}
+.blog-feature-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+}
+.blog-feature-body {
+  padding: 2rem;
+}
+.blog-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.blog-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid #dbeafe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.blog-feature-title {
+  margin-bottom: 0.75rem;
+  color: #0f172a;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+.blog-feature-copy {
+  margin-bottom: 1.5rem;
+  color: #475569;
+}
+.blog-feature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+.blog-primary-link {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10px;
+  background: #2563eb;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.blog-primary-link:hover,
+.blog-primary-link:focus {
+  background: #1d4ed8;
+  color: #ffffff;
+  text-decoration: none;
+}
+.blog-secondary-link {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #475569;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.blog-secondary-link:hover,
+.blog-secondary-link:focus {
+  border-color: #93c5fd;
+  background: #f8fafc;
+  color: #334155;
+  text-decoration: none;
+}
+.blog-meta-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.blog-meta-list li {
+  padding: 0.9rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+.blog-meta-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.blog-meta-value {
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+  word-break: break-all;
+}
+.blog-inline-link {
+  color: #2563eb;
+}
+.blog-inline-link:hover,
+.blog-inline-link:focus {
+  color: #1d4ed8;
+}
+@media (max-width: 768px) {
+  .blog-feature-body {
+    padding: 1.5rem;
+  }
+}
 @media (max-width: 576px) {
   .service-image {
     height: 180px;
@@ -232,6 +354,21 @@ section {
   </div>
 </section>
 
+<section id="sec3-blog">
+  <div class="container">
+    <h2 class="text-center">社内技術ブログ</h2>
+    <div class="section-text text-center mb-4 section-narrow mx-auto">
+      <p>WAO'Sの社内技術ブログを公開しています。</p>
+      <p>技術検証、開発ノウハウ、学習内容を継続的に発信し、開発現場で蓄積した知見をご覧いただけます。</p>
+      <p>ブログは生成AIで社内向けに作成したオリジナルのものです。</p>
+    </div>
+        <div class="blog-feature-actions">
+          <a class="blog-primary-link" href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">ブログを見る</a>
+        </div>
+
+  </div>
+</section>
+
 <section id="sec4">
   <div class="container">
     <h2 class="text-center">会社概要</h2>
@@ -285,6 +422,8 @@ section {
       <a href="https://waos-system.github.io/exam-questions/" target="_blank" rel="noopener">学習サイト</a>
       <span class="mx-2">|</span>
       <a href="https://vote-bbs.vercel.app/" target="_blank" rel="noopener">掲示板サイト</a>
+      <span class="mx-2">|</span>
+      <a href="https://blog-lime-nine-98.vercel.app/" target="_blank" rel="noopener">社内技術ブログ</a>
       <span class="mx-2">|</span>
       <a href="contact.html" target="_blank" rel="noopener">お問い合わせ</a>
       <span class="mx-2">|</span>

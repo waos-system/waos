@@ -4,7 +4,7 @@
 
 main{
     display: block;
-    background-color: #fbfbf2;
+    background-color: #f8fafc;
 }
 main .btn{
     padding-left: 2.5rem;
@@ -19,7 +19,7 @@ h2, h3{
     color: #6c757d;
 }
 .card{
-    border-color: #ffc10738;
+    border-color: #dbeafe;
 }
 .img-thumbnail {
     width: 100%;
@@ -61,7 +61,7 @@ h2, h3{
     font-size: 1rem;
     font-weight: bold;
     margin: 1.5rem 0;
-    color: #ffce11;
+    color: #dbeafe;
 }
 #footer address p,
 #footer #footer-news li{
@@ -91,7 +91,7 @@ h2, h3{
 /* メイン画像 */
 h1{
     font-weight: bold !important;
-    color: #ffce11;
+    color: #ffffff;
 }
 #page-top h1 + span {
     font-size: 3rem;
@@ -103,7 +103,7 @@ h1{
 }
 #page-top .jumbotron-fluid{
     height: 640px;
-    background-color: #f1efff;
+    background-color: #eff6ff;
     border-bottom: #dddddd;
     background: url("../img/top-main.jpg") no-repeat center center;
     background-size:cover;
@@ -122,12 +122,12 @@ h1{
 
 /* 各セクション */
 #page-top section{
-    border-bottom: 1px solid #ffc10738;
-    background-color: #fbfbf2;
+    border-bottom: 1px solid #dbeafe;
+    background-color: #f8fafc;
 	padding: 5rem 0;
 }
 #page-top section:nth-child(odd){
-    background-color: #ffc10738;
+    background-color: #eff6ff;
 }
 #page-top section .container > h2{
     margin-bottom: 30px;
@@ -243,7 +243,7 @@ h1.page-ttl {
     margin-top: 0.2rem;
 }
 #page .jumbotron{
-    background-color: #f1efff;
+    background-color: #eff6ff;
     border-bottom: #dddddd;
     background: url("../img/top-main.jpg") no-repeat center center;
     background-size:cover;
@@ -275,7 +275,7 @@ h1.page-ttl {
     margin-left: 0.5em;
 }
 #page .sample-title span{
-    background-color: #fbfbf2;
+    background-color: #f8fafc;
 }
 #page .sample-subtitle{
     font-size: 1.5rem;

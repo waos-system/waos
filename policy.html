@@ -17,6 +17,98 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/queries.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<style>
+:root {
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --slate-50: #f8fafc;
+  --slate-200: #e2e8f0;
+  --slate-500: #64748b;
+  --slate-700: #334155;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+}
+body {
+  background: var(--slate-50);
+  color: var(--slate-700);
+  font-family: "Noto Sans JP", sans-serif;
+}
+header {
+  border-bottom: 1px solid var(--slate-200);
+  background: rgba(248, 250, 252, 0.9);
+  backdrop-filter: blur(12px);
+}
+h2,
+h3 {
+  color: var(--slate-900);
+}
+a {
+  color: var(--blue-600);
+}
+a:hover,
+a:focus {
+  color: var(--blue-700);
+}
+.policy-shell {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid var(--slate-200);
+  border-radius: 16px;
+  background: #ffffff;
+}
+.policy-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid var(--blue-100);
+  border-radius: 6px;
+  background: var(--blue-50);
+  color: var(--blue-700);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.policy-body {
+  font-size: 1rem;
+  line-height: 1.85;
+}
+.policy-body ul {
+  padding-left: 1.2rem;
+}
+.btn-policy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--blue-600);
+  border-radius: 10px;
+  background: var(--blue-600);
+  color: #ffffff !important;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.btn-policy:hover,
+.btn-policy:focus {
+  border-color: var(--blue-700);
+  background: var(--blue-700);
+  color: #ffffff !important;
+  text-decoration: none;
+}
+@media (max-width: 576px) {
+  .policy-shell {
+    padding: 1.5rem;
+  }
+  .btn-policy {
+    width: 100%;
+    min-width: 0;
+  }
+}
+</style>
 </head>
 <body id="page-top">
 <!------------------------------------------------------------------------------------------------------------------>
@@ -25,15 +117,16 @@
     <a class="d-flex align-items-center text-decoration-none" href="index.html">
       <img src="img/waoslogo.png" alt="株式会社WAO'S" style="height:40px;">
     </a>
-    <a href="index.html" class="btn btn-outline-secondary btn-sm">トップページ</a>
+    <a href="index.html" class="btn-policy">トップページ</a>
   </div>
 </header>
 <main>
 <section id="sec5">
     <div class="container">
-
-        <h2 class="text-center">プライバシーポリシー（個人情報保護方針）</h2>
-        <div class="lead text-left font-weight-normal">
+        <div class="policy-shell">
+            <div class="policy-label">Policy</div>
+            <h2 class="text-center mb-4">プライバシーポリシー（個人情報保護方針）</h2>
+        <div class="policy-body text-left font-weight-normal">
             <p>株式会社WAO'S（以下「当社」）は、個人情報保護の重要性を認識し、以下の方針に基づき個人情報の保護に努めます。</p>
 
             <h3 class="h5 mt-4">1. 取得する個人情報</h3>
@@ -74,6 +167,7 @@
                 <p class="mb-1">制定日 2018年11月1日</p>
                 <p class="mb-0">改定日 2026年2月1日</p>
             </div>
+        </div>
         </div>
 
     </div><!-- .container -->
